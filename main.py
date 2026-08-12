@@ -30,8 +30,8 @@ input(
 options = {
     "format": "bestaudio/best",
     "cookiesfrombrowser": ("brave",),
-    "sleep_interval": 5,
-    "max_sleep_interval": 10,
+    "sleep_interval": 3,
+    "max_sleep_interval": 5,
     "ignoreerrors": True,
     "retries": 5,
     "noplaylist": True,

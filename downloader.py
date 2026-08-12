@@ -118,14 +118,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--sleep",
         type=float,
-        default=5,
-        help="Minimum seconds between downloads (default: 5)",
+        default=3,
+        help="Minimum seconds between downloads (default: 3)",
     )
     parser.add_argument(
         "--max-sleep",
         type=float,
-        default=10,
-        help="Maximum randomized delay between downloads (default: 10)",
+        default=5,
+        help="Maximum randomized delay between downloads (default: 5)",
     )
     parser.add_argument(
         "--dry-run",
@@ -267,14 +267,14 @@ def run_interactive_wizard() -> argparse.Namespace:
             style=PROMPT_STYLE,
         )
     )
-    sleep = 5.0
-    max_sleep = 10.0
+    sleep = 3.0
+    max_sleep = 5.0
     if advanced:
         sleep = float(
             ask(
                 questionary.text(
                     "Minimum delay between downloads (seconds):",
-                    default="5",
+                    default="3",
                     validate=non_negative_number,
                     style=PROMPT_STYLE,
                 )
@@ -284,7 +284,7 @@ def run_interactive_wizard() -> argparse.Namespace:
             ask(
                 questionary.text(
                     "Maximum randomized delay (seconds):",
-                    default="10",
+                    default="5",
                     validate=non_negative_number,
                     style=PROMPT_STYLE,
                 )
